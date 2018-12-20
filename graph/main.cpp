@@ -33,6 +33,16 @@ void insert_e(string a){
     
 }
 void insert_l(string a1, string a2){
+    int ss=0;
+    for(int i=0; i<ncount; i++){
+        if(e[i].root->name==a1){
+            ss++;
+        }
+        if(e[i].root->name==a2){
+            ss++;
+        }
+    }
+    if(ss==2){
     int i = 0;
     while(e[i].root->name!=a1){
         if(i>=ecount){
@@ -63,6 +73,7 @@ void insert_l(string a1, string a2){
         temp1 = temp1 -> next;
     }
     temp1->next = new node(a1);
+    }
 }
 void delete_l(string a1, string a2){
     int i = 0;
@@ -198,7 +209,7 @@ int main(){
         }
         cout<<endl;
     }
-    if(search("aa", "b")==true){
+    if(search("aa", "b")){
         cout<< "zam baina"<<endl;
     }
     else{
